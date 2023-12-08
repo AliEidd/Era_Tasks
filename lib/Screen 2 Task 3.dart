@@ -1,8 +1,50 @@
 import 'package:flutter/material.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
-class Screen5 extends StatelessWidget {
-  const Screen5({super.key});
+
+class User {
+  String? name;
+  String? text;
+
+
+  User(
+  {this.name,this.text}
+      );
+}
+
+List users = [
+  User( name: 'Ali Eid',text: 'Welcome to flutter'),
+  User( name: 'Omar Ahmed',text: 'Welcome to anything'),
+  User( name: 'Eslam Medhat',text: 'Welcome to flutter & firebase'),
+  User( name: 'Ahmed Emad',text: 'Welcome to Backend'),
+  User( name: 'Asim Ayman',text: 'Welcome to Front-End'),
+  User( name: 'Youssef Elgebaly',text: 'Welcome to JS'),
+  User( name: 'Mohamed Saad',text: 'Welcome to Assignment'),
+  User( name: 'Ahmed Essam',text: 'Welcome to Youtube'),
+  User( name: 'Nada Esmail',text: 'Welcome to Python'),
+  User( name: 'Mohamed Ahmed',text: 'Welcome to Dart'),
+  User( name: 'Ahmed Eslam',text: 'Welcome to Algorithms'),
+  User( name: 'Hamada Fayad',text: 'Welcome to our team'),
+];
+
+List name = [
+  User( name: 'Ali'),
+  User( name: 'Omar '),
+  User( name: 'Eslam '),
+  User( name: 'Ahmed'),
+  User( name: 'Asim '),
+  User( name: 'Youssef'),
+  User( name: 'Mohamed'),
+  User( name: 'Ahmed'),
+  User( name: 'Nada'),
+  User( name: 'Mohamed'),
+  User( name: 'Ahmed'),
+  User( name: 'Hamada'),
+];
+
+class Screen2Task3 extends StatelessWidget {
+  const Screen2Task3({super.key});
+
 
   @override
   Widget build(BuildContext context) {
@@ -44,7 +86,7 @@ class Screen5 extends StatelessWidget {
                   decoration: BoxDecoration(
                     color: Colors.grey.shade800,
                     borderRadius: BorderRadius.circular(25),
-        
+
                   ),
                   height: 50,
                   width: 380,
@@ -63,33 +105,33 @@ class Screen5 extends StatelessWidget {
               height: 80,
               width: double.infinity,
               child: ListView.separated(
-                scrollDirection: Axis.horizontal,
+                  scrollDirection: Axis.horizontal,
                   itemBuilder: (context, index) =>
-                 Column(
-                   children: [
-                     Stack(
-                       children: [
-                         Align(
-                           alignment: AlignmentDirectional.topStart,
-                           child: CircleAvatar(
-                      radius: 30,
-                      backgroundImage: Image.asset('images/image5.jpg', fit: BoxFit.contain,).image,
-                                   ),
-                                 ),
-                                 PositionedDirectional(
-                                   start: 15,
-                                   bottom: -25,
-                                   child: Icon(MdiIcons.circleSmall,size: 70,color: Colors.green.shade600,
-                                   ),
-                                 )
-                          ],
-                        ),
-                     Text('Ali Eid', style: TextStyle(color: Colors.white,),)
-                   ],
-                 ),
+                      Column(
+                        children: [
+                          Stack(
+                            children: [
+                              Align(
+                                alignment: AlignmentDirectional.topStart,
+                                child: CircleAvatar(
+                                  radius: 30,
+                                  backgroundImage: Image.asset('images/image5.jpg', fit: BoxFit.contain,).image,
+                                ),
+                              ),
+                              PositionedDirectional(
+                                start: 15,
+                                bottom: -25,
+                                child: Icon(MdiIcons.circleSmall,size: 70,color: Colors.green.shade600,
+                                ),
+                              )
+                            ],
+                          ),
+                          Text(name[index].name, style: TextStyle(color: Colors.white,),)
+                        ],
+                      ),
                   separatorBuilder: (context, index) =>
-                  SizedBox(width: 15,),
-                  itemCount: 15),
+                      SizedBox(width: 15,),
+                  itemCount: name.length),
             ),
             SizedBox(height: 15,),
             ListView.separated(
@@ -119,23 +161,25 @@ class Screen5 extends StatelessWidget {
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text('Ali Eid', style: TextStyle(color: Colors.white,),),
+                            Text(users[index].name, style: TextStyle(color: Colors.white,),),
                             SizedBox(height: 5,),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Text('Welcome to flutter', style: TextStyle(color: Colors.white,),),
-                                SizedBox(width: 150),
-                                Text('11:37 PM', style: TextStyle(color: Colors.grey),)
-                              ],
+                            Container(
+                              width: 335,
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text(users[index].text, style: TextStyle(color: Colors.white,),),
+                                  Text('11:37 PM', style: TextStyle(color: Colors.grey),)
+                                ],
+                              ),
                             ),
                           ],
                         ),
                       ],
                     ),
                 separatorBuilder: (context, index) =>
-                SizedBox(height: 15,),
-                itemCount: 20)
+                    SizedBox(height: 15,),
+                itemCount: users.length)
           ],
         ),
       ),
