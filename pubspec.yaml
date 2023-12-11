@@ -81,6 +81,11 @@ flutter:
     - images/image13.png
     - Myicons/
     - images/image14.png
+    - images/image15.jpg
+    - images/image16.jpg
+    - images/image17.jpg
+    - images/image18.png
+    - images/image19.png
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

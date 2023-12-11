@@ -3,18 +3,24 @@ import 'package:material_design_icons_flutter/material_design_icons_flutter.dart
 
 
 abstract class User{
-  String? username;
+  String? userName;
   String? image;
 
-  User({this.username,this.image});
+  User({this.userName,this.image});
 }
 
 class Posts extends User{
   String? postImage;
 
-  Posts({super.image,super.username,this.postImage});
+  Posts({super.image,super.userName,this.postImage});
 }
 
+List posts = [
+  Posts(userName: 'Ali Eid', image: 'images/image15.jpg',postImage: 'images/image11.png'),
+  Posts(userName: 'Ahmed Saleh', image:'images/image16.jpg', postImage: 'images/image18.png' ),
+  Posts(userName: 'Mohamed ayman ', image: 'images/image17.jpg',postImage: 'images/image19.png')
+
+];
 
 
 class InstaPage extends StatelessWidget {
@@ -94,60 +100,66 @@ class InstaPage extends StatelessWidget {
           ),
         ],
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(10.0),
-        child: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Row(
-                children: [
-                  CircleAvatar(
-                    backgroundColor: Colors.white,
-                      radius: 20,
-                    backgroundImage: Image.asset('images/image12.png',color: Colors.white, height: 30, width: 30,fit: BoxFit.contain,).image,
+      body: ListView.separated(
+          itemBuilder: (context, index) =>
+              Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: SingleChildScrollView(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        children: [
+                          CircleAvatar(
+                            backgroundColor: Colors.white,
+                            radius: 20,
+                            backgroundImage: Image.asset(posts[index].image,color: Colors.white, height: 30, width: 30,fit: BoxFit.contain,).image,
+                          ),
+                          SizedBox(width: 20,),
+                          Text(posts[index].userName,style: TextStyle(fontSize: 20,color: Colors.white),),
+                          Spacer(flex: 5,),
+                          Expanded(child: Icon(MdiIcons.dotsHorizontal,color: Colors.white,)),
+                        ],
                       ),
-                  SizedBox(width: 20,),
-                  Text('dude.coder',style: TextStyle(fontSize: 20,color: Colors.white),),
-                  SizedBox(width: 190,),
-                  Icon(MdiIcons.dotsHorizontal,color: Colors.white,),
-                ],
-              ),
-              SizedBox(height: 5,),
-              Image.asset('images/image11.png'),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Icon(Icons.favorite_border,color: Colors.white,size: 30,),
-                  SizedBox(width: 10,),
-                  Icon(MdiIcons.chatOutline,color: Colors.white,size: 30),
-                  SizedBox(width: 10,),
-                  Icon(MdiIcons.sendVariantOutline,color: Colors.white,size: 30),
-                  Expanded(child: Image.asset('images/image14.png',height: 50,width: 50,color: Colors.grey,)),
-                  Icon(Icons.bookmark_outline,color: Colors.white,size: 30,),
-                ],
-              ),
-              SizedBox(height: 5,),
-              Row(
-                children: [
-                  CircleAvatar(
-                    radius: 17,
-                    backgroundImage: Image.asset('images/image13.png',fit: BoxFit.contain,).image,
-                  ),
-                  SizedBox(width: 10,),
-                  Text('Liked by flutter.deviser and 44 others',style: TextStyle(color: Colors.white, fontSize: 15),),
-                ],
-              ),
-              SizedBox(height: 5,),
-              Text('dude.coder Firebase In-App Messaging helps you engage you app\'s active by sending them targeted .... more',
-              style: TextStyle(color: Colors.white,fontSize: 15),),
-              SizedBox(height: 5,),
-              Text('View 1 comment',style: TextStyle(color: Colors.grey,fontSize: 17),)
+                      SizedBox(height: 5,),
+                      Image.asset(posts[index].postImage),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Icon(Icons.favorite_border,color: Colors.white,size: 30,),
+                          SizedBox(width: 10,),
+                          Icon(MdiIcons.chatOutline,color: Colors.white,size: 30),
+                          SizedBox(width: 10,),
+                          Icon(MdiIcons.sendVariantOutline,color: Colors.white,size: 30),
+                          Expanded(child: Image.asset('images/image14.png',height: 50,width: 50,color: Colors.grey,)),
+                          Icon(Icons.bookmark_outline,color: Colors.white,size: 30,),
+                        ],
+                      ),
+                      SizedBox(height: 5,),
+                      Row(
+                        children: [
+                          CircleAvatar(
+                            radius: 17,
+                            backgroundImage: Image.asset('images/image13.png',fit: BoxFit.contain,).image,
+                          ),
+                          SizedBox(width: 10,),
+                          Text('Liked by flutter.deviser and 44 others',style: TextStyle(color: Colors.white, fontSize: 15),),
+                        ],
+                      ),
+                      SizedBox(height: 5,),
+                      Text('dude.coder Firebase In-App Messaging helps you engage you app\'s active by sending them targeted .... more',
+                        style: TextStyle(color: Colors.white,fontSize: 15),),
+                      SizedBox(height: 5,),
+                      Text('View 1 comment',style: TextStyle(color: Colors.grey,fontSize: 17),)
 
-            ],
-          ),
-        ),
-      ),
+                    ],
+                  ),
+                ),
+              ),
+          separatorBuilder: (context, index) =>
+          SizedBox(height: 15,),
+          itemCount: posts.length
+      )
     );
   }
 }
