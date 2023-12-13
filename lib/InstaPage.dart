@@ -32,10 +32,13 @@ class InstaPage extends StatelessWidget {
       backgroundColor: Colors.black,
       appBar: AppBar(
         backgroundColor: Colors.black,
-        leadingWidth: 120,
+        leadingWidth: 140,
         leading: Row(
           children: [
-            Text('Instagram',style: TextStyle(color: Colors.white,fontSize: 20),),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text('Instagram',style: TextStyle(color: Colors.white,fontSize: 30,fontFamily: 'Billabong'),),
+            ),
             Icon(Icons.keyboard_arrow_down,color: Colors.white,)
           ],
         ),

@@ -40,6 +40,7 @@ dependencies:
   material_design_icons_flutter: ^7.0.7296
   
   community_material_icon: ^5.9.55
+  google_fonts: ^6.1.0
 
 dev_dependencies:
   flutter_test:
@@ -100,9 +101,12 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
-    - family: Bettanesia
+    - family: Billabong
       fonts:
-          - asset: fonts/Bettanesia.ttf
+          - asset: fonts/Billabong.ttf
+
+
+
 
 
   #       - asset: fonts/Schyler-Italic.ttf
