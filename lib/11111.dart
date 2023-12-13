@@ -12,10 +12,12 @@ import 'package:projects/Screen2%20task2.dart';
 import 'package:projects/Sign%20up.dart';
 import 'package:projects/screen%201%20task%202.dart';
 
+import 'RunLoginPage.dart';
+
 void main(){
   runApp(
     MaterialApp(
-      home: InstaPage(),
+      home: RunLoginPage(),
     ),
   );
 }
