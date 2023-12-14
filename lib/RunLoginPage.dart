@@ -130,6 +130,21 @@ class _RunLoginPageState extends State<RunLoginPage> {
                   )
                 ],
               ),
+              SizedBox(
+                width: 400,
+                height: 70,
+                child: ElevatedButton(
+                  onPressed: (){}, child:
+                Text('Log In',style: TextStyle(color: Colors.white ,fontSize: 30),),
+                  style: ElevatedButton.styleFrom(
+                    shape:RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(15)
+                    ) ,
+                      backgroundColor: Colors.deepPurpleAccent,
+                  ),
+                ),
+              ),
+
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -183,7 +198,7 @@ class _RunLoginPageState extends State<RunLoginPage> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text('New Here ?',style: TextStyle(color: Colors.white,fontSize: 20),),
+                  Text('New User ?',style: TextStyle(color: Colors.white,fontSize: 20),),
                   TextButton(
                       onPressed: (){}
                       , child: Text('Sign up',style: TextStyle(color: Colors.deepPurple,fontSize: 20,fontWeight: FontWeight.bold),)
