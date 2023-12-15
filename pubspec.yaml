@@ -92,6 +92,8 @@ flutter:
     - images/image22.png
     - images/image23.png
     - images/image24.png
+    - images/image25.png
+    - images/image26.png
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
