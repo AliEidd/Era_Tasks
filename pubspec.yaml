@@ -41,6 +41,7 @@ dependencies:
   
   community_material_icon: ^5.9.55
   google_fonts: ^6.1.0
+  percent_indicator: ^4.2.3
 
 dev_dependencies:
   flutter_test:
@@ -94,6 +95,12 @@ flutter:
     - images/image24.png
     - images/image25.png
     - images/image26.png
+    - images/image27.png
+    - images/image28.png
+    - images/image29.png
+    - images/image30.png
+    - images/image33.png
+    - images/image34.png
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

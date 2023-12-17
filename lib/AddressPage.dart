@@ -71,7 +71,7 @@ class AddressPage extends StatelessWidget {
           ),
         ),
 
-      )
+      ),
 
     );
   }
