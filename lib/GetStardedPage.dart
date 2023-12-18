@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'RunAppIntro1.dart';
+import 'Colors.dart';
 
 class GetStardedPage extends StatelessWidget {
   const GetStardedPage({super.key});
@@ -7,7 +9,7 @@ class GetStardedPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
 
-      backgroundColor: Colors.blueGrey.shade900,
+      backgroundColor: primary,
       body: SafeArea(
         bottom: false,
         child: Container(
@@ -26,7 +28,9 @@ class GetStardedPage extends StatelessWidget {
                 width: 300,
                 height: 70,
                 child: ElevatedButton(
-                  onPressed: (){}, child:
+                  onPressed: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => RunIntro1(),));
+                  }, child:
                 Text('Get Started',style: TextStyle(color: Colors.white ,fontSize: 30),),
                   style: ElevatedButton.styleFrom(
                     shape:RoundedRectangleBorder(

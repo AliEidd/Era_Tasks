@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:projects/ButtomNavigationBar.dart';
+import 'package:projects/HomeScreenPage.dart';
+
+import 'Colors.dart';
 
 class AddressPage extends StatelessWidget {
   const AddressPage({super.key});
@@ -6,9 +10,9 @@ class AddressPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blueGrey.shade900,
+      backgroundColor: primary,
       appBar: AppBar(
-        backgroundColor: Colors.blueGrey.shade900,
+        backgroundColor: primary,
         leadingWidth: 200,
         leading: Padding(
           padding: const EdgeInsets.all(10.0),
@@ -21,7 +25,9 @@ class AddressPage extends StatelessWidget {
                 ),
                 height: 30,
                 width: 30,
-                child: Icon(Icons.arrow_back_sharp,color: Colors.white,size: 20,),
+                child: InkWell(
+                  onTap: (){Navigator.pop(context);},
+                    child: Icon(Icons.arrow_back_sharp,color: Colors.white,size: 20,)),
               ),
               SizedBox(width: 15,),
               Text(
@@ -64,7 +70,9 @@ class AddressPage extends StatelessWidget {
                   height: 70,
                   width: double.infinity  ,
                   alignment: Alignment.center,
-                  child:  TextButton(onPressed: (){},child: Text('Add Address',style: TextStyle(color: Colors.deepPurpleAccent,fontSize: 30),),),
+                  child:  TextButton(onPressed: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => Button(),));
+                  },child: Text('Add Address',style: TextStyle(color: Colors.deepPurpleAccent,fontSize: 30),),),
 
                   ),
             ],

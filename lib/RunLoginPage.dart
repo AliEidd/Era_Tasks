@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
+import 'package:projects/VerifyPage.dart';
+
+import 'Colors.dart';
 
 
 
@@ -30,10 +33,12 @@ class _RunLoginPageState extends State<RunLoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      backgroundColor: Colors.blueGrey.shade900,
+      backgroundColor: primary,
       appBar: AppBar(
-        backgroundColor: Colors.blueGrey.shade900,
-        leading: Icon(Icons.arrow_back_sharp,color: Colors.white,size: 30,),
+        backgroundColor: primary,
+        leading: InkWell(
+          onTap: (){Navigator.pop(context);},
+            child: Icon(Icons.arrow_back_sharp,color: Colors.white,size: 30,)),
 
       ),
       body: Padding(
@@ -134,7 +139,9 @@ class _RunLoginPageState extends State<RunLoginPage> {
                 width: 400,
                 height: 70,
                 child: ElevatedButton(
-                  onPressed: (){}, child:
+                  onPressed: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => VerifyPage(),));
+                  }, child:
                 Text('Log In',style: TextStyle(color: Colors.white ,fontSize: 30),),
                   style: ElevatedButton.styleFrom(
                     shape:RoundedRectangleBorder(

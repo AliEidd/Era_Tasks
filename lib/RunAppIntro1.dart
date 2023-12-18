@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:projects/RunLoginPage.dart';
+
+import 'Colors.dart';
 
 class RunIntro1 extends StatelessWidget {
   const RunIntro1({super.key});
@@ -6,10 +9,12 @@ class RunIntro1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blueGrey.shade900,
+      backgroundColor: primary,
       appBar: AppBar(
-        backgroundColor: Colors.blueGrey.shade900,
-        leading: Icon(Icons.arrow_back_sharp,color: Colors.white,size: 30,),
+        backgroundColor: primary,
+        leading: InkWell(
+          onTap: (){Navigator.pop(context);},
+            child: Icon(Icons.arrow_back_sharp,color: Colors.white,size: 30,)),
         actions: [
           TextButton(
               onPressed: (){}
@@ -58,7 +63,9 @@ class RunIntro1 extends StatelessWidget {
                       width: 200,
                       height: 70,
                       child: ElevatedButton(
-                        onPressed: (){}, child:
+                        onPressed: (){
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => RunLoginPage(),));
+                        }, child:
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [

@@ -2,10 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
+import 'package:projects/Colors.dart';
+import 'package:projects/HistoryPage.dart';
+import 'package:projects/NewWalletPage.dart';
+import 'package:projects/StorePage.dart';
 
 class HomeScreenPage extends StatelessWidget {
-  const HomeScreenPage({super.key});
-
+   HomeScreenPage({super.key});
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -56,11 +59,18 @@ class HomeScreenPage extends StatelessWidget {
             },
 
           ),
-
           actions: [
-            Icon(Icons.inbox_outlined,color: Colors.white,size: 30,),
+            InkWell(
+              onTap: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context) => StorePage(),));
+              },
+                child: Icon(Icons.inbox_outlined,color: Colors.white,size: 30,)),
             SizedBox(width: 15,),
-            Icon(Icons.mark_email_unread_outlined,color: Colors.white,size: 30,),
+            InkWell(
+              onTap: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context) => NewWalletPage(),));
+              },
+                child: Icon(Icons.mark_email_unread_outlined,color: Colors.white,size: 30,)),
             SizedBox(width: 20,),
           ],
         ),
@@ -84,11 +94,14 @@ class HomeScreenPage extends StatelessWidget {
                       Expanded(child: Text('steps',style: TextStyle(color: Colors.grey,fontSize: 17))),
                        Text('Level 5',style: TextStyle(color: Colors.yellow.shade600,fontSize: 20)),
                       SizedBox( width: 8,),
-                      CircleAvatar(
-                        radius: 30, // Image radius
-                        backgroundColor: Colors.blue.shade100,
-                        child: Image.asset('images/image37.png',height: 50,width: 50,),
+                      InkWell(
+                        onTap: (){Navigator.pop(context);},
+                        child: CircleAvatar(
+                          radius: 30, // Image radius
+                          backgroundColor: Colors.blue.shade100,
+                          child: Image.asset('images/image37.png',height: 50,width: 50,),
 
+                        ),
                       ),
                     ],
                   ),
@@ -300,7 +313,9 @@ class HomeScreenPage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text('History',style: TextStyle(color: Colors.white,fontSize: 20),),
-                      TextButton(onPressed: (){}, child: Text('See All',style: TextStyle(color: Colors.deepPurple,fontSize: 20),)),
+                      TextButton(onPressed: (){
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => HistoryPage(),));
+                      }, child: Text('See All',style: TextStyle(color: Colors.deepPurple,fontSize: 20),)),
                     ],
                   ),
                   Container(

@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
+import 'package:projects/AddressPage.dart';
+
+import 'Colors.dart';
 
 class VerifyPage extends StatelessWidget {
   const VerifyPage({super.key});
@@ -7,10 +10,12 @@ class VerifyPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blueGrey.shade900,
+      backgroundColor: primary,
       appBar: AppBar(
-        backgroundColor: Colors.blueGrey.shade900,
-        leading: Icon(Icons.arrow_back_sharp,color: Colors.white,size: 30,),
+        backgroundColor: primary,
+        leading: InkWell(
+          onTap: (){Navigator.pop(context);},
+            child: Icon(Icons.arrow_back_sharp,color: Colors.white,size: 30,)),
       ),
       body: SizedBox(
       width: double.infinity,
@@ -78,7 +83,9 @@ class VerifyPage extends StatelessWidget {
               width: 400,
               height: 70,
               child: ElevatedButton(
-                onPressed: (){}, child:
+                onPressed: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => AddressPage(),));
+                }, child:
               Text('Verify Email',style: TextStyle(color: Colors.white ,fontSize: 30),),
                 style: ElevatedButton.styleFrom(
                   shape:RoundedRectangleBorder(
