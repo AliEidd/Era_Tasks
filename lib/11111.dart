@@ -20,7 +20,7 @@ import 'VerifyPage.dart';
 void main(){
   runApp(
     MaterialApp(
-      home:HomeScreenPage()
+      home:GetStardedPage()
 
 
       )
