@@ -71,7 +71,55 @@ class AddressPage extends StatelessWidget {
                   width: double.infinity  ,
                   alignment: Alignment.center,
                   child:  TextButton(onPressed: (){
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => Button(),));
+                    showDialog(context: context, builder: (context) =>
+                        Dialog(
+                          alignment: Alignment.center,
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: primary,
+                              borderRadius: BorderRadius.circular(25),
+                            ),
+                            child: SizedBox(
+                              height: 400,
+                              width: 500,
+                              child: Padding(
+                                padding: const EdgeInsets.all(17.0),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    Image.asset('images/image58.png',height: 100,width: 100,),
+                                    SizedBox(height: 20,),
+                                    Text('Account Updated',style: TextStyle(color: Colors.white,fontSize: 25),),
+                                    SizedBox(height: 5,),
+                                    Text('Your account details have been successfully changed',textAlign: TextAlign.center,style: TextStyle(color: Colors.grey,fontSize: 17,)),
+                                    SizedBox(height: 20,),
+                                    SizedBox(
+                                      width: 300,
+                                      height: 70,
+                                      child: ElevatedButton(
+                                        onPressed: (){
+                                          Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreenPage(),));
+                                        }, child:
+                                      Text('OK',style: TextStyle(color: Colors.white ,fontSize: 30),),
+                                        style: ElevatedButton.styleFrom(
+                                          shape:RoundedRectangleBorder(
+                                              borderRadius: BorderRadius.circular(15)
+                                          ) ,
+                                          backgroundColor: Colors.deepPurpleAccent,
+                                        ),
+                                      ),
+                                    ),
+
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
+                        )
+
+                      );
+
                   },child: Text('Add Address',style: TextStyle(color: Colors.deepPurpleAccent,fontSize: 30),),),
 
                   ),

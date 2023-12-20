@@ -388,7 +388,8 @@ class HomeScreenPage extends StatelessWidget {
                             children: [
                               Text('10,120',style :TextStyle(color: Colors.white,fontSize: 25,fontWeight: FontWeight.bold)),
                               SizedBox(width: 5,),
-                              Text('Steps',style :TextStyle(color: Colors.white,fontSize: 17))
+                              Text('Steps',style :TextStyle(color: Colors.white,fontSize: 17)),
+                              
                             ],
                           )
                         ],
